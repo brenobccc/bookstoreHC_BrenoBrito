@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <script src="script.js"></script>
+    <link href="layout.css" rel="stylesheet">
+</head>
+<body>
+    <button id="counter" onclick="carrinho(), totalPrice()">
+        <h3>Comprar</h3>
+        <img src="buy.png">
+        <div id="number">
+            0
+        </div>
+    </button>
+    <div id="campo">
+       <div>
+            <div id="close">
+                <img src="close.png" onclick="close_controll()">
+            </div>
+
+              
+            
+            <form>
+                
+                <h1 id="qtde_itens_form">Quantidade de itens: </h1>
+                <h2 id="preco_total">Valor: </h2>
+                <input type="text" placeholder="digite seu nome" class="input_close" id="nome">
+                <input type="tel" placeholder="digite seu telefone" class="input_close" id="telefone">
+                <input type="button" id="input" value="Finalizar Pedido" onclick="close_controll(),  finalizarPedido()">
+
+            </form>
+        </div>
+    </div>
+    <header>
+        
+        <div id="menu-content">
+            <img src="logo.svg">
+
+            
+
+
+            <input type="checkbox" id="check">
+            <label for="check">
+                <img src="bars-solid.svg">
+            </label>
+            <ul>
+                <li>Início</li>
+                <li>Sobre</li>
+                <li>Contato</li>
+            </ul>
+        </div>
+
+        <div id="banner-content">
+            <div id="banner-content-box">
+                <img src="bookgif1.gif">
+                <div>
+                  <!-- FORM and TEXT-->
+                  <img src="302.svg">
+                  <p>
+                      Todos os produtos com 30% de desconto. 
+                  </p>
+                  <h4>
+                    Cadastre seu email e não perca nenhuma novidade!
+                  </h4>
+                   <form>
+                      <input type="text" placeholder="Digite seu email" name="email" id="form-email">
+                      <input type="button" id="form-button" value="Cadastrar" onclick="">
+                  </form>
+                </div>
+            </div>
+
+        </div>
+ 
+    </header>
+    <main>
+    
+        <article class="main-book-type">
+        
+            <h1>Distopia:</h1>
+        </article>
+        <article>
+            <div class="article-book">
+
+                <img src="A_revolucao_dos_bichos.jpg">
+                <h1>A revolução dos bichos(George Orwell)</h1>
+                
+                <p class="preco1"> R$ 39,40 <span>R$ 50,00</span></p>
+                <button onclick="addBook(value, 'A revolução dos bichos(George Orwell)',39.40)" value="001">Adicionar ao carrinho</button>
+            </div>
+            <div class="article-book">
+
+                <img src="1984.jpg">
+                <h1>1984(George Orwell)</h1>
+                <p class="preco1"> R$ 50,17 <span>R$ 50,00</span></p>
+                <button onclick="addBook(value, '1984(George Orwell)',50.17)" value="002">Adicionar ao carrinho</button>
+            </div>
+            <div class="article-book">
+
+                <img src="faren451.jpg">
+                <h1>Fahrenheit (Ray Bradbury) </h1>
+                <p class="preco1"> R$ 44,89 <span>R$ 50,00</span></p>
+                <button onclick="addBook(value, 'Fahrenheit (Ray Bradbury) ',44.89)" value="003">Adicionar ao carrinho</button>
+            </div>
+            <div class="article-book">
+
+                <img src="conto_aia.jpg">
+                <h1>Conto da aia(Margaret Atwood)</h1>
+                <p class="preco1"> 39,90 <span>R$ 50,00</span></p>
+                <button onclick="addBook(value, 'Conto da aia(Margaret Atwood)',39.90)" value="004">Adicionar ao carrinho</button>
+            </div>
+            
+            
+        </article>
+   
+        <article class="main-book-type">
+            <h1>Romance:</h1>
+        </article>
+        <article>
+            <div class="article-book">
+
+                <img src="orgulho_e_preconceito.jpg">
+                <h1>Orgulho e preconceito (Jane Austen)</h1>
+                <p class="preco1"> R$ 89,90<span>R$ 50,00</span></p>
+                <button onclick="addBook(value, 'Orgulho e preconceito (Jane Austen)',89.90)" value="005">Adicionar ao carrinho</button>
+            </div>
+            <div class="article-book">
+
+                <img src="sete_maridos.jpg">
+                <h1>Os sete maridos de Evelyn Hugo(Taylor Jenkins Reid)</h1>
+                <p class="preco1"> R$ 27,07 <span>R$ 50,00</span></p>
+                <button onclick="addBook(value, 'Os sete maridos de Evelyn Hugo(Taylor Jenkins Reid)',27.07)" value="006">Adicionar ao carrinho</button>
+            </div>
+            <div class="article-book">
+
+                <img src="domcasmurro.jpg">
+                <h1>Dom Casmurro (Machado de Assis)</h1>
+                <p class="preco1"> R$ 89,90 <span>R$ 50,00</span></p>
+                <button onclick="addBook(value, 'Dom Casmurro (Machado de Assis)',89.90)" value="007">Adicionar ao carrinho</button>
+            </div>
+            <div class="article-book">
+
+                <img src="anne.png">
+                <h1>Anne de Green Gables (L.M Montgomery)</h1>
+                <p class="preco1"> R$ 50,00 <span>R$ 50,00</span></p>
+                <button onclick="addBook(value, 'Anne de Green Gables (L.M Montgomery)',50.00)" value="008">Adicionar ao carrinho</button>
+            </div>
+            
+        </article>
+           
+        <article class="main-book-type">
+            <h1>Fantasia:</h1>
+        </article>
+        <article>
+            <div class="article-book">
+
+                <img src="cortes_espinhos_rosas.jpg">
+                <h1>Corte de espinhos e rosas (Sarah J. Maas)</h1>
+                <p class="preco1"> R$ 32,89 <span>R$ 50,00</span></p>
+                <button onclick="addBook(value, 'Corte de espinhos e rosas (Sarah J. Maas)',32.00)" value="009">Adicionar ao carrinho</button>
+            </div>
+            <div class="article-book">
+
+                <img src="happypotter_box.jpg">
+                <h1>Harry Potter (J.K Rowling) – Box </h1>
+                <p class="preco1"> R$ 190,00 <span>R$ 50,00</span></p>
+                <button onclick="addBook(value, 'Harry Potter (J.K Rowling) – Box ',190.00)" value="010">Adicionar ao carrinho</button>
+            </div>
+            <div class="article-book">
+
+                <img src="percyjackson.jpg">
+                <h1>Percy Jackson (Rick Riordan) – Box</h1>
+                <p class="preco1"> R$139,00 <span>R$ 50,00</span></p>
+                <button onclick="addBook(value, 'Percy Jackson (Rick Riordan) – Box',139.00)" value="011">Adicionar ao carrinho</button>
+            </div>
+            <div class="article-book">
+
+                <img src="sombras_ossos.jpg">
+                <h1>Sombras e Ossos (Leigh Bardugo) </h1>
+                <p class="preco1"> R$ 35,98 <span>R$ 50,00</span></p>
+                <button onclick="addBook(value, 'Sombras e Ossos (Leigh Bardugo) ',35.98)" value="012">Adicionar ao carrinho</button>
+            </div>
+            
+        </article>
+        <article class="main-book-type">
+            <h1>Terror/ Thriller:</h1>
+        </article>
+        <article>
+            <div class="article-book">
+
+                <img src="chamado.jpg">
+                <h1>O chamado de Cthulhu (H.P Lovecraft)</h1>
+                <p class="preco1"> R$ 53,11 <span>R$ 60,00</span></p>
+                <button onclick="addBook(value, 'O chamado de Cthulhu (H.P Lovecraft)',53.00)" value="013">Adicionar ao carrinho</button>
+            </div>
+            <div class="article-book">
+
+                <img src="paciente_silenciosa.jpg">
+                <h1>A paciente silenciosa (Alex Michaelides)</h1>
+                <p class="preco1"> R$ 28,10 <span>R$ 50,00</span></p>
+                <button onclick="addBook(value, 'A paciente silenciosa (Alex Michaelides)',28.10)" value="014">Adicionar ao carrinho</button>
+            </div>
+            <div class="article-book">
+
+                <img src="um_mentindo.jpg">
+                <h1>Um de nós está mentindo (Karen M. McManus)</h1>
+                <p class="preco1"> R$ 30,79 <span>R$ 50,00</span></p>
+                <button onclick="addBook(value, 'Um de nós está mentindo (Karen M. McManus)',30.79)" value="015">Adicionar ao carrinho</button>
+            </div>
+            <div class="article-book">
+
+                <img src="it.jpg">
+                <h1>It: A coisa (Stephen King) </h1>
+                <p class="preco1"> R$ 59,90<span>R$ 70,00</span></p>
+                <button onclick="addBook(value, 'It: A coisa (Stephen King) ',59.90)" value="016">Adicionar ao carrinho</button>
+            </div>
+            
+        </article>
+        
+    </main>
+    <footer>
+        <h1>criador: Breno Brito</h1>
+    </footer>
+</body>
+</html>
