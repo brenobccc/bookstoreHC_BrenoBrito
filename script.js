@@ -74,7 +74,7 @@ function finalizarPedido() {
 
     localStorage.setItem(`Compra${localStorage.length + 1}`, convertData);
     //console.log(convertData);
-    alert("Items cadastrados cadastrado!!");
+    alert("Items cadastrados com sucesso!!");
     //limpando carrinho
     qtde = 0;
     document.getElementById("number").innerText = qtde;
